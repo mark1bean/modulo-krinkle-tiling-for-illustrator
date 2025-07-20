@@ -9,7 +9,7 @@ Huge thanks to Miki for discovering this tiling and sharing with us!
 
 From Adobe Illustrator, run the script file **Draw Modulo Krinkle Tiling.js** and you will see the interface (see below). Explore the parameters, set the drawing options and click "Draw" to generate the tiling.
 
-![The user interface](./docs/ui-1.png)
+![The user interface](./Docs/ui-1.png)
 
 ---
 
