@@ -11,7 +11,9 @@ From Adobe Illustrator, run the script file **Draw Modulo Krinkle Tiling.js** an
 
 ![The user interface](./Docs/ui-1.png)
 
----
+## Highlights
+
+
 
 ## Installation
 

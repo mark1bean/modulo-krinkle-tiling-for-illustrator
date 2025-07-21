@@ -58,3 +58,19 @@
     }
 
 })();
+
+/**
+ * Returns the center [x,y] of the active artboard of `doc`.
+ * @param {Document} doc - an Illustrator Document.
+ * @returns {point}
+ */
+function getCenterOfActiveArtboard(doc) {
+
+    var ab = doc.artboards[doc.artboards.getActiveArtboardIndex()].artboardRect;
+
+    return [
+        ab[0] + (ab[2] - ab[0]) / 2,
+        ab[1] + (ab[3] - ab[1]) / 2
+    ];
+
+};
