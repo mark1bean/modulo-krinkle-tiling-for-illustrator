@@ -21,7 +21,7 @@ From Adobe Illustrator, run the script file **Draw Modulo Krinkle Tiling.js** an
 
 Download script files (zipped):
 
-[![Download](https://img.shields.io/badge/download-latest-blue.svg?style=for-the-badge)](https://github.com/mark1bean/modulo-krinkle-tiling-for-adobe-illustrator/archive/refs/heads/main.zip)
+[![Download](https://img.shields.io/badge/download-latest-blue.svg?style=for-the-badge)](https://github.com/mark1bean/modulo-krinkle-tiling-for-illustrator/archive/refs/heads/main.zip)
 
 The repository contains the following script files:
 
