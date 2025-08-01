@@ -12,6 +12,8 @@ if ('function' !== typeof ModuloKrinkle)
 
 /**
  * Provides UI for configuring a Modulo Krinkle tiled pattern.
+ * @author m1b
+ * @version 2025-07-20
  * @returns {1|2} - the result code (1 means proceed, 2 means cancel).
  */
 function MK_UI(settings) {
@@ -493,7 +495,7 @@ function getUnitStringAsPoints(str) {
 /**
  * A bare bones circle ScriptUI Button.
  * @author m1b
- * @version 2025-07-20
+ * @version 2025-08-01
  * @constructor
  * @param {SUI container} container - the button's location.
  * @param {Array<Number>} preferredSize - the button's preferredSize
@@ -506,8 +508,8 @@ function PlainCircleButton(container, preferredSize, drawFunction, clickFunction
     this.button.preferredSize = preferredSize;
 
     var gfx = this.button.graphics;
-    var inactiveStroke = gfx.newPen(gfx.PenType.SOLID_COLOR, [.9, .9, .9], 1);
-    var activeStroke = gfx.newPen(gfx.PenType.SOLID_COLOR, [.33, .33, .33], 1.5);
+    var inactiveStroke = gfx.newPen(gfx.PenType.SOLID_COLOR, [.9, .9, .9], 1.5);
+    var activeStroke = gfx.newPen(gfx.PenType.SOLID_COLOR, [.33, .33, .33], 2);
     var inactiveFill = gfx.newBrush(gfx.BrushType.SOLID_COLOR, [0.33, 0.33, 0.33]);
     var activeFill = gfx.newBrush(gfx.BrushType.SOLID_COLOR, [0.25, 0.8, 0.9]);
     var width = this.button.preferredSize[0];
@@ -516,18 +518,17 @@ function PlainCircleButton(container, preferredSize, drawFunction, clickFunction
     if (clickFunction)
         this.button.onClick = clickFunction;
 
-    this.button.onActivate = function () { this.active = true };
-    this.button.onDeactivate = function () { this.active = false };
+    this.button.onDraw = function (ev) {
 
-    this.button.onDraw = function () {
+        var m = ev.mouseOver;
 
         // circle background
         gfx.newPath();
         gfx.ellipsePath(0, 0, width, height);
-        gfx.fillPath(this.active ? activeFill : inactiveFill);
+        gfx.fillPath(m ? activeFill : inactiveFill);
 
         if (drawFunction)
-            drawFunction(gfx, width, height, this.active ? activeStroke : inactiveStroke, this.active ? activeFill : inactiveFill);
+            drawFunction(gfx, width, height, m ? activeStroke : inactiveStroke, m ? activeFill : inactiveFill, ev);
 
     };
 
